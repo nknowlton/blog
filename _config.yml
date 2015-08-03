@@ -9,11 +9,11 @@ permalink:           pretty
 relative_permalinks: true
 
 # Setup
-title:               Musings on R and C++
+title:               'Big Data Bioinformatics'
 tagline:             ''
 description:         ''
-home:                http://kevinushey.github.io
-url:                 http://kevinushey.github.io/blog
+home:                http://jimhester.github.io
+url:                 http://jimhester.github.io/blog
 baseurl:             /blog
 paginate:            5
 paginate_path:       "/page:num/"
@@ -21,9 +21,9 @@ exclude:             ['posts']
 
 # About/contact
 author:
-  name:              Kevin Ushey
-  url:               https://twitter.com/kevin_ushey
-  email:             kevinushey@gmail.com
+  name:              Jim Hester
+  url:               https://twitter.com/the_belal
+  email:             james.f.hester@gmail.com
 
 # Custom vars
 version:             1.0.0
