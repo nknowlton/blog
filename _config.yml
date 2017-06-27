@@ -11,9 +11,9 @@ permalink:           pretty
 title:               ''
 tagline:             ''
 description:         ''
-home:                http://jimhester.github.io
-url:                 http://jimhester.github.io/blog
-baseurl:             /blog
+home:                http://jimhester.com
+url:                 http://jimhester.com
+baseurl:             /
 paginate:            5
 paginate_path:       "/page:num/"
 exclude:             ['posts']
@@ -21,7 +21,7 @@ exclude:             ['posts']
 # About/contact
 author:
   name:              Jim Hester
-  url:               https://twitter.com/the_belal
+  url:               https://twitter.com/jimhester_
   email:             james.f.hester@gmail.com
 
 # Custom vars
