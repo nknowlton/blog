@@ -8,7 +8,7 @@ highlighter:         rouge
 permalink:           pretty
 
 # Setup
-title:               ''
+title:               "Jim Hester's blog"
 tagline:             ''
 description:         ''
 home:                http://jimhester.com
@@ -16,6 +16,7 @@ url:                 http://jimhester.com
 paginate:            5
 paginate_path:       "/page:num/"
 exclude:             ['posts']
+plugins: [jekyll-paginate]
 
 # About/contact
 author:
