@@ -1,11 +1,9 @@
 ---
 layout: post
-title: Using Docker for package development
+title: Docker for R Package Development
 tags: R
 comments: true
 ---
-
-# Why Docker for R Package Development
 
 [Docker] has been widely touted in the R community as a way to provide
 reproducibility in analysis by explicitly describing system dependencies for a
