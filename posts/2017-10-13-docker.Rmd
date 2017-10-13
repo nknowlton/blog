@@ -8,9 +8,9 @@ comments: true
 [Docker] has been widely touted in the R community as a way to provide
 reproducibility in analysis by explicitly describing system dependencies for a
 given project. See [An Introduction to Rocker: Docker Containers for
-R](https://arxiv.org/abs/1710.03675). However a different use case than those
-described in the paper where docker is also useful is for testing R packages
-during package development.
+R](https://arxiv.org/abs/1710.03675) for details of the project goals and
+use-cases. However a different use case than those described in the paper where
+docker is also useful is for testing R packages during package development.
 
 Services like [Travis-CI][travis] are an excellent way to run automated checks for a
 package on linux environments. However each build takes at least a few minutes
@@ -21,32 +21,30 @@ looking at the build logs has the same access, so it is not really practical to
 use.
 
 Docker provides a nice way to setup and run linux environments on a wide
-variety of distributions relatively simply. Because these environments are run
+variety of distributions. Because these environments are run
 on your local computer you can have a very tight feedback loop, which can make
 debugging issues much less time consuming.
 
 ## Installing Docker
 
-I use MacOS for my primary development machine, and fortunately installing
-docker there is now relatively painless. You can simply use [docker for
-mac](https://docs.docker.com/docker-for-mac/install/) to install the docker
-client.
+I use MacOS for my primary development machine, and fortunately there is now a
+nice [docker for mac](https://docs.docker.com/docker-for-mac/install/)
+installer available to install the docker client.
 
-Other operating systems have equally simple [installation
-procedures](https://docs.docker.com/engine/installation/#supported-platforms),
-there is a windows client available and most popular linux distribution have
-docker available in the distributions package manager.
+[installation
+procedures](https://docs.docker.com/engine/installation/#supported-platforms)
+for the windows client are also available and most popular linux distributions
+have docker clients in their distributions package manager.
 
 ## Docker Containers
 
 Before you can begin using docker, you need to decide what container to use.
 Containers are basically a saved set of instructions on how to setup an environment.
-Fortunately for R use there are a number of great resources for pre-written and generated
-containers you can use. In particular the [rocker] project by Carl Boettiger,
-Dirk Eddelbuettel, et al. provides a large set of containers with various
-configurations. [rhub] also uses docker for it's linux builders which provides
-a nice way to create Fedora and CentOS environments which replicate the
-environments used to build packages on rhub.
+Fortunately for R use there are a number of containers already available. In
+particular the [rocker] project by Carl Boettiger, Dirk Eddelbuettel, et al.
+provides a large set of containers with various configurations. Gábor Csárdi's
+[rhub] project also uses docker for it's linux builders which provide a
+nice way to replicate environments used to build packages on rhub.
 
 I have found the most useful containers for R package development to be
 
@@ -62,13 +60,13 @@ I have found the most useful containers for R package development to be
   so using `rocker/r-apt:trusty` will get you a local environment very close to
   what is being run with your travis jobs.
 - The [rhub containers](https://github.com/r-hub/rhub-linux-builders) for
-  fedora, centos and others with both gcc and clang, e.g `rhub/fedora-gcc`.
+  fedora, centos and others with both gcc and clang flavors, e.g `rhub/fedora-gcc`.
 - [r-devel-san](https://hub.docker.com/r/rocker/r-devel-san/) and
   [r-devel-ubsan-clang](https://hub.docker.com/r/rocker/r-devel-ubsan-clang/)
   which build R using [address sanitizers], very helpful for detecting memory
   errors in C/C++ code used in R packages.
 
-## Running docker
+## Running docker for development
 
 So once you have picked out what container you want to use how do you actually
 go about testing your R package with it? Lets say you have a package on your
@@ -143,9 +141,9 @@ If you are running the address sanitizers and want to abort on the error (so
 you can get a backtrace of the location) you can do so with
 `ASAN_OPTIONS=abort_on_error=1 RD -d gdb`.
 
-If using docker on MacOS the host can be accessed from the container with ip
-192.168.65.1. This is useful if you have a database or other service running on
-the host machine.
+If using docker on MacOS the host can be accessed from the container with the
+stable ip `192.168.65.1.` This is useful if you have a database or other
+service running on the host machine.
 
 ## Conclusion
 
