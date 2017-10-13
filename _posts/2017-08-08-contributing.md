@@ -10,7 +10,7 @@ are often widely used and have well known maintainers. Contributing code and
 having it accepted seems an almost insurmountable task.
 
 However if you follow a few simple strategies you can have your code accepted
-into even the most popular projects in the [tidyverse](https://tidyverse.org).
+into even the most popular projects in the [Tidyverse](https://tidyverse.org).
 
 ### Don't Contribute Code at all ###
 
@@ -49,6 +49,14 @@ certain code style, variable names or code organization? Are there common
 requests such as adding a note to the NEWS commonly forgotten? If you can
 handle these things _before_ the reviewer even sees your code is greatly
 reduces the friction in merging your changes.
+
+### Write good commit messages ###
+
+Chris Beams has a great article on [How to Write a Git Commit
+Message](https://chris.beams.io/posts/git-commit/). If there was one thing
+apart from the code itself that effects how maintainers see your contribution
+the commit message is it. A properly formatted message is a huge indicator of
+high quality acceptable code.
 
 ### Make your changes as _small_ as possible ###
 
@@ -93,7 +101,7 @@ covered is a great way to contribute to a project.
 One of the first barriers to acceptance is coding style. Do not submit a
 contribution using camelCase to a project that uses snake_case, or use tabs
 when the project uses spaces. For Tidyverse projects read the [Style
-Guide](https://style.tidyverse.org) and use the
+Guide](http://style.tidyverse.org) and use the
 [lintr](https://cran.r-project.org/package=lintr) package to find code which
 does not adhere to the style guide.
 
